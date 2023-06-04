@@ -1,37 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:first_app/custom_widget.dart';
 
 void main() {
+  const List<Color> colorsList = [
+    Color.fromARGB(255, 34, 133, 255),
+    Color.fromARGB(255, 0, 18, 41)
+  ];
+  //Color.fromARGB(255, 0, 18, 41),
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
-        body: GradientContainer(),
+        body: CustomWidget(colorsList), // CustomWidget heya objet ml class eli khademha fl custom_widget.dart
       ),
     ),
   );
-}
-//custom widget
-class GradientContainer extends StatelessWidget{
-
-  @override
-  Widget build(context){
-    return Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 34, 133, 255),
-                Color.fromARGB(255, 0, 18, 41),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: const Center(
-            child: Text("TEST" ,style: TextStyle(
-              color: Colors.white,
-              fontSize: 28.5,
-            )),
-          ),
-        );
-  }
-
 }
